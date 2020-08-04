@@ -24,10 +24,21 @@ node* reverseViaLoop(node* head) {
     return ret;
 }
 
+node* reverseViaRecursive(node* prev, node* cur) {
+    node* ret;
+    if(cur->next == nullptr) {
+        ret = cur;
+        cur->next = prev;
+        return ret;
+    } 
+    node* next = cur->next;
+    cur->next = prev;
+    return reverseViaRecursive(cur, next);
+}
 
 int main() {
     node* head = init();
     showList(head);
-    showList(reverseViaLoop(head));
+    showList(reverseViaRecursive(nullptr, head));
     return 0;
 }
