@@ -1,4 +1,8 @@
 #include "node.hpp"
+/*
+  Link list逆序問題
+  Reference Book 1, 1.1   
+*/
 
 node* reverseViaLoop(node* head) {
     if(head == nullptr || head->next == nullptr) {
