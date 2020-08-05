@@ -1,5 +1,4 @@
 #include "node.hpp"
-#include<iostream>
 /*
   Link list逆序問題
   Reference Book 1, 1.1   
