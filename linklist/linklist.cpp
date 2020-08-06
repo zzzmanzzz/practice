@@ -23,7 +23,7 @@ node* initWithDuplicate() {
     node *cur = head;
 
     for(int i = 0 ; i < _LENGTH ; i++) {
-        cur->data = i % (_LENGTH - 3);
+        cur->data = i / 2;
         if(i == _LENGTH - 1) {
            cur->next = nullptr;
         } else {

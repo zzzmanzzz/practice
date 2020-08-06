@@ -7,6 +7,7 @@ struct node {
 };
 
 extern node* init();
+extern node* initWithDuplicate();
 extern void showList(node* head);
 
 #endif
