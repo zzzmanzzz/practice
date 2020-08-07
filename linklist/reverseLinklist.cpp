@@ -11,25 +11,24 @@ node* reverseViaLoop(node* head) {
     
     node* prev = head;    
     node* cur = head->next;
-    prev->next = nullptr;
+    head->next = nullptr;
 
     node* ret;
 
     node* next;
     for(; cur != nullptr; cur = next) {
-         if(cur->next == nullptr) {
-            ret = cur;
+        if(cur->next == nullptr) {
+           ret = cur;
         }
         next = cur->next;
         cur->next = prev;
         prev = cur;
-       
     }
     return ret;
 }
 
 node* reverseViaRecursive(node* prev, node* cur) {
-     if(cur == nullptr || cur->next == nullptr) {
+    if(cur == nullptr) {
         return cur;
     }
 
@@ -64,13 +63,14 @@ node* reverseViaInsert(node* head) {
 
     node* ret = dummyHead->next;
     delete(dummyHead);
-
     return ret;
 }
 
 int main() {
     node* head = init();
     showList(head);
-    showList(reverseViaInsert(head));
+    showList(reverseViaLoop(head));
+    //showList(reverseViaRecursive(nullptr, head));
+    //showList(reverseViaInsert(head));
     return 0;
 }

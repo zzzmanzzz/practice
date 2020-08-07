@@ -88,7 +88,9 @@ void removeViaRecursive(node* head){
 int main() {
    node* head = initWithDuplicate();
     showList(head);
-    removeViaRecursive(head);
+    removeViaLoop(head);
+    //removeViaRecursive(head);
+    //removeViaSet(head);
     showList(head);
     return 0;
 }
