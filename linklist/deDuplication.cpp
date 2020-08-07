@@ -62,9 +62,6 @@ void removeViaSet(node* head) {
   o check
   - find from here                        
 */
-
-
-
 void removeViaRecursive(node* head){
   if(head == nullptr || head->next == nullptr) {
     return;
