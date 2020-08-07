@@ -1,8 +1,6 @@
 #include "node.hpp"
 #include <iostream>
 
-
-
 node* initViaArray(int arr[], int size) {
     node *head = new node();
     node *cur = head;
