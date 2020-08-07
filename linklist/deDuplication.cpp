@@ -52,11 +52,46 @@ void removeViaSet(node* head) {
   }
 }
 
+/*
+   o-----------------------
+    o----------------------
+     o---------------------
+      ...
+                         o-
+                          o
+  o check
+  - find from here                        
+*/
+
+
+
+void removeViaRecursive(node* head){
+  if(head == nullptr || head->next == nullptr) {
+    return;
+  }
+
+  node* cur = head->next;
+  node* prev = head;
+  int tmp = head->data;
+
+  while (cur != nullptr) {
+     if(cur->data == tmp) {
+        node* next = cur->next;
+        prev->next = next;
+        delete(cur);
+        cur = next;
+        continue;
+    }
+    prev = cur;
+    cur = cur->next;
+  }
+  removeViaRecursive(head->next);
+}
 
 int main() {
    node* head = initWithDuplicate();
     showList(head);
-    removeViaSet(head);
+    removeViaRecursive(head);
     showList(head);
     return 0;
 }
