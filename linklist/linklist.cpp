@@ -1,38 +1,7 @@
 #include "node.hpp"
 #include <iostream>
 
-const int _LENGTH = 10;
-node* init() {
-    node *head = new node();
-    node *cur = head;
 
-    for(int i = 0 ; i < _LENGTH ; i++) {
-        cur->data = i;
-        if(i == _LENGTH - 1) {
-           cur->next = nullptr;
-        } else {
-           cur->next = new node();
-        }
-        cur = cur->next;
-    }
-    return head;
-}
-
-node* initWithDuplicate() {
-    node *head = new node();
-    node *cur = head;
-
-    for(int i = 0 ; i < _LENGTH ; i++) {
-        cur->data = i / 2;
-        if(i == _LENGTH - 1) {
-           cur->next = nullptr;
-        } else {
-           cur->next = new node();
-        }
-        cur = cur->next;
-    }
-    return head;
-}
 
 node* initViaArray(int arr[], int size) {
     node *head = new node();
@@ -48,6 +17,16 @@ node* initViaArray(int arr[], int size) {
         cur = cur->next;
     }
     return head;
+}
+
+node* init() {
+    int arr[] = {0, 1, 2, 3 , 4, 5, 6, 7, 8, 9};
+    return initViaArray(arr, 10);
+}
+
+node* initWithDuplicate() {
+    int arr[] = {0, 1, 4, 3 , 4, 2, 2, 2, 1, 4};
+    return initViaArray(arr, 10);
 }
 
 void showList(node* head) {
