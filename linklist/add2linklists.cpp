@@ -4,8 +4,6 @@ Reference Book 1, 1.3
 */
 #include "node.hpp"
 
-
-
 node* add(node* var1, node* var2) {
     if(var1 == nullptr) {
         return var2;
@@ -25,7 +23,6 @@ node* add(node* var1, node* var2) {
         int cur1Data = 0;
         int cur2Data = 0; 
 
-      
         if(cur2 == nullptr && cur1 == nullptr) {
             if(carry > 0) {
                 curSum->next = new node();
@@ -61,10 +58,6 @@ node* add(node* var1, node* var2) {
     node *ret = dummyHead->next;
     delete(dummyHead);
     return ret;
-
-
-
-
 }
 
 int main() {
