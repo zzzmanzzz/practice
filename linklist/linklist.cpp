@@ -27,6 +27,35 @@ node* initWithDuplicate() {
     return initViaArray(arr, 10);
 }
 
+node* initWithLoop(int arr[], int size, int startIndex) {
+    if(startIndex >= size || startIndex < 0) {
+        return nullptr;
+    }
+    node* head = initViaArray(arr, size);
+    node* cur = head;
+    node* loopStart = nullptr;
+    int idx = 0;
+    while(cur != nullptr) {
+       if(idx == startIndex) {
+           loopStart = cur;
+           break;
+       } else {
+           idx++;
+           cur = cur->next;
+       }
+    }
+    cur = loopStart;
+    while(true) { 
+        if(cur->next == nullptr) {
+            cur->next = loopStart;
+            break;
+        }
+        cur = cur->next;
+    }
+    return head;
+}
+
+
 void showList(node* head) {
     node* cur = head;
     for(; cur != nullptr ;cur = cur->next) {
