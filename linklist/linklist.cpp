@@ -2,6 +2,10 @@
 #include <iostream>
 
 node* initViaArray(int arr[], int size) {
+    if(size < 1 || arr == nullptr) {
+        return nullptr;
+    }
+
     node *head = new node();
     node *cur = head;
 
