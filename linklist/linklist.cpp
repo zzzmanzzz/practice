@@ -1,5 +1,4 @@
 #include "node.hpp"
-#include <iostream>
 
 node* initViaArray(int arr[], int size) {
     if(size < 1 || arr == nullptr) {
@@ -24,6 +23,32 @@ node* initViaArray(int arr[], int size) {
 node* init() {
     int arr[] = {0, 1, 2, 3 , 4, 5, 6, 7, 8, 9};
     return initViaArray(arr, 10);
+}
+
+std::vector<node*> initCommonTailList(int arr1[], int arr2[], int arr1Size, int arr2Size, int arr2pointToArr1Idx) {
+    node* arr1Head = initViaArray(arr1, arr1Size);
+    node* arr2Head = initViaArray(arr2, arr2Size);
+    std::vector<node*> twoHeads;
+    twoHeads.push_back(arr1Head);
+    twoHeads.push_back(arr2Head);
+
+    node* cur1 = arr1Head;
+    node* cur2 = arr2Head;
+
+    int idx = 0;
+    while(cur1 != nullptr && idx < arr2pointToArr1Idx) {
+        idx++;
+        cur1 = cur1->next;
+    }
+
+    while(cur2->next != nullptr) {
+        cur2 = cur2->next;
+    }
+
+    cur2->next = cur1;
+
+    return twoHeads;
+
 }
 
 node* initWithDuplicate() {
