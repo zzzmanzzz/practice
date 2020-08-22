@@ -1,13 +1,9 @@
 #include"stack.hpp"
-#include"linkStack.hpp"
+#include"initStack.hpp"
 
 int main() {
-    stack *s = new linkStack();
-    s->push(1);
-    s->push(2);
-    s->push(3);
-    
+    int arr[] = {0,1,2,3,4,5,6,7,8,9};
+    stack *s = initStack(arr,  10);
     s->dump();
-
     return 0;
 }
