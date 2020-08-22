@@ -7,15 +7,8 @@ int main() {
     s->push(1);
     s->push(2);
     s->push(3);
-
-     try{
-    std::cout<< s->pop();
-    std::cout<< s->pop();
-    std::cout<< s->pop();
-    std::cout<< s->pop();
-     } catch(char const* e){
-         std::cout << e;
-     }
+    
+    s->dump();
 
     return 0;
 }

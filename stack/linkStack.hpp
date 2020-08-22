@@ -15,8 +15,11 @@ class linkStack : public stack {
     linkStack() {
         cur = nullptr;
     }
+    bool hasNext();
     void push(int data);
     int pop();
+    void dump();
+
     ~linkStack() {
         while(cur != nullptr) {
             node* tmp = cur;
