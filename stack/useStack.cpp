@@ -1,6 +1,5 @@
 #include"stack.hpp"
 #include"linkStack.hpp"
-#include<iostream>
 
 int main() {
     stack *s = new linkStack();
