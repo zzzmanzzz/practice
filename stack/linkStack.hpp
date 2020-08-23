@@ -1,7 +1,10 @@
 #ifndef LINKSTACK_H
 #define LINKSTACK_H
 #include"stack.hpp"
-
+/*
+實作stack
+Reference Book 1, 2.1
+*/
 struct node {
     int data;
     node* next;
