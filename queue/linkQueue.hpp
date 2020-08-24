@@ -26,8 +26,6 @@ class linkQueue : public queue {
     int dequeue();
     void enqueue(int data);
 
-    void dump();
-
     ~linkQueue() {
         while(rear != nullptr) {
             node* tmp = rear;
