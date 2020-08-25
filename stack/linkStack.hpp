@@ -19,6 +19,7 @@ class linkStack : public stack {
         cur = nullptr;
     }
     bool hasNext();
+    bool isEmpty();
     void push(int data);
     int pop();
     void dump();
