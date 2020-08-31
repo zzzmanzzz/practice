@@ -1,4 +1,5 @@
 #include"linkStack.hpp"
+#include"O1MinStack.hpp"
 #include<iostream>
 
 bool linkStack::hasNext() {
@@ -40,6 +41,42 @@ void linkStack::dump() {
     while(!isEmpty()) {
         std::cout << pop() <<" ";
     }
-    std::cout << "<bottom> ";
+    std::cout << "<bottom>" << std::endl;
 }
 
+
+/*------------------------------------
+用O(1)取得stack中最小值
+Reference Book 1, 2.5
+--------------------------------------*/
+
+void O1MinStack::push(int data) {
+    int tmp;
+
+    if(!this->min->isEmpty()) {
+       tmp = this->min->pop();
+       this->min->push(tmp);
+    } else {
+       tmp = data;
+    }
+
+    if(data <= tmp) {
+        this->min->push(data);
+    }
+    this->s->push(data);
+}
+
+int O1MinStack::pop() {
+    int ret;
+    if(isEmpty()) {
+        throw "empty stack";
+    } else {
+        ret = this->s->pop();
+        int tmp = this->min->pop();
+
+        if(tmp != ret) {
+            this->min->push(tmp);
+        }
+    }
+    return ret;
+}
