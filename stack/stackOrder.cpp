@@ -2,6 +2,10 @@
 #include"linkStack.hpp"
 #include<iostream>
 
+/*
+根據入stack序列判斷另一序列是否為此stack的可能出stack序列
+Reference Book 1, 2.4.
+*/
 bool isPossiblePopOrder(const int arr1[], const int arr2[], const int arrSize) {
     if(arrSize < 1 || arr1 == nullptr || arr2 == nullptr) {
         return false;
