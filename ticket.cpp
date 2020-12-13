@@ -6,7 +6,7 @@ A-D B-G C-A G-F D-B
 求這些票的路線
 C-A-D-B-G-F
 
-Reference Book 1, 
+Reference Book 1, 2.9
 */
 
 
