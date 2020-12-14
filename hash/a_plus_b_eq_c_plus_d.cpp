@@ -25,8 +25,6 @@ int main() {
                 idx.push_back(i);
                 idx.push_back(j);
                 sums[tmp] = idx;
-               // std::cout << vals[i] << "+" << vals[j] <<" = " << tmp <<"\n";
-
             }
             
              else {
@@ -35,8 +33,6 @@ int main() {
                     return 0;
                 }               
             }
-
-            
             
         }
     }
